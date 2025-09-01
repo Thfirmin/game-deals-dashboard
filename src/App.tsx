@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import HomePage from './pages/Home'
+import Layout from './Layout'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import DashboardPage from './pages/Dashboard'
+import AboutPage from './pages/About'
+import TestPage from './pages/Test'
+import RouterWatch from './components/RouterWatch'
 
 function App() {
-  const [count, setCount] = useState(0)
+  function handleRouteChange(path: string) {
+    const appMainElement = document.getElementById('app-main');
+    if (appMainElement) {
+      appMainElement.classList.forEach(
+        (cls) => {
+          appMainElement.classList.remove(cls);
+        }
+      );
+      const sanitizedPath = path === '/' ? 'home' : path.replace(/\//g, '-').replace(/^-+|-+$/g, '');
+      appMainElement.classList.add(`page-${sanitizedPath}`);
+    }
+    console.log('Route changed to:', path);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Layout>
+        <RouterWatch onChange={handleRouteChange} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="test" element={<TestPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
 
