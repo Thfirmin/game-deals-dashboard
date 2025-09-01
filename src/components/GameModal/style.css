@@ -1,0 +1,109 @@
+.game-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--modal-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.game-modal-content {
+  background: var(--page-bg);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .game-modal-content {
+    width: 90%;
+  }
+}
+
+.game-modal-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-70);
+}
+
+.game-modal-close:hover {
+  color: var(--text-100);
+}
+
+.game-modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--title);
+}
+
+.game-modal-header {
+  display: grid;
+  grid-template-rows: 2fr 1fr auto;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 15px;
+}
+
+.game-modal-image {
+  border-radius: 5px;
+}
+
+.game-modal-body {
+  font-size: 16px;
+  color: var(--text-70);
+}
+
+.game-modal-divider {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+    to right, 
+    transparent,
+    var(--page-bg-em) 40%,
+    var(--page-bg-em) 60%,
+    transparent
+  ) 1;
+  margin: 10px 0;
+}
+
+/* ==== Prices ==== */
+
+.game-modal-prices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  justify-content: center;
+  margin-block: 10px;
+  padding-left: 10%;
+}
+
+.game-modal-original-price {
+  text-decoration: line-through;
+  color: var(--text-50);
+}
+
+.game-modal-arrow {
+  font-weight: bold;
+  color: var(--text-100);
+}
+
+.game-modal-sale-price {
+  font-weight: bold;
+  color: var(--text-70);
+}
+
+.game-modal-savings {
+  color: var(--primary-2);
+  font-weight: bold;
+}
