@@ -1,0 +1,41 @@
+.data_container {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.mode-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: calc(var(--spacing) * 6);
+  margin-top: calc(var(--spacing) * 4) 0;
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+.divisor {
+  width: 50%;
+  margin-block: 15px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+    to right, 
+    transparent,
+    var(--page-bg-em) 40%,
+    var(--page-bg-em) 60%,
+    transparent
+  ) 1;
+}
+
+@media screen and (max-width: 768px) {
+  .mode-selector {
+    
+    width: 100%;
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .divisor {
+    width: 100%;
+  }
+}

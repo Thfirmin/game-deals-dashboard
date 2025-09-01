@@ -1,0 +1,9 @@
+.section_container {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .section_container {
+    width: 90%;
+  }
+}
