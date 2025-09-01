@@ -1,0 +1,60 @@
+.theme-switcher {
+  min-width: 64px;
+  width: 100px;
+  min-height: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: var(--page-bg-em);
+  display: grid;
+  align-items: center;
+}
+
+.theme-switcher-circle-sun {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--page-bg);
+  color: var(--page-bg-em);
+  position: relative;
+  justify-self: start;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: moon-to-sun;
+  animation-duration: 0.5s;
+}
+
+@keyframes moon-to-sun {
+  0% {
+    left: 60px; top: 0px;
+  }
+  100% {
+    left: 0px; top: 0px;
+  }
+}
+
+.theme-switcher-circle-moon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--page-bg);
+  position: relative;
+  justify-self: end;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: sun-to-moon;
+  animation-duration: 0.5s;
+}
+
+
+@keyframes sun-to-moon {
+  0% {
+    left: -60px; top: 0px;
+  }
+  100% {
+    left: 0px; top: 0px;
+  }
+}

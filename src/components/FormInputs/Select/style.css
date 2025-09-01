@@ -1,0 +1,10 @@
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--text-70);
+  color: var(--text-70);
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: center;
+}

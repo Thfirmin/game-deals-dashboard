@@ -1,0 +1,28 @@
+.section-card {
+  background-color: var(--color-muted);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: #00000020 0px 4px 6px -1px, #00000010 0px 2px 4px -1px;
+  width: 30vw;
+  min-width: 320px;
+  max-width: 375px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-card:hover {
+  transform: scale(1.05);
+  box-shadow: #00000030 0px 6px 8px -1px, #00000020 0px 4px 6px -1px;
+}

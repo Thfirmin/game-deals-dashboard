@@ -1,0 +1,12 @@
+.form-container {
+  display: grid;
+  width: 50%;
+  gap: calc(var(--spacing) * 4);
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}

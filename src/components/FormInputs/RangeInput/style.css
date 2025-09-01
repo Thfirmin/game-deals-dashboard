@@ -1,0 +1,11 @@
+.noUi-connects {
+ 	background: var(--text-30);
+}
+
+.noUi-connect {
+ 	background-color: var(--primary-1) !important;
+}
+
+.noUi-touch-area {
+	cursor: pointer;
+}
